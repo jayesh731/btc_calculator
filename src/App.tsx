@@ -19,7 +19,7 @@ function App() {
   });
 
   useEffect(() => {
-    document.title = "Bitcoin Position Calculator";
+    // document.title = "Bitcoin Position Calculator";
     calculatePositionMetrics();
   }, [entryPrice, stopLossPrice, targetPrice, leverage, marginAmount, isLong]);
 
