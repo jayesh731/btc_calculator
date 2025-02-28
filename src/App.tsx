@@ -19,8 +19,15 @@ function App() {
   });
 
   useEffect(() => {
+    document.title = "Bitcoin Position Calculator";
     calculatePositionMetrics();
   }, [entryPrice, stopLossPrice, targetPrice, leverage, marginAmount, isLong]);
+
+  const handleBlur = () => {
+    if (entryPrice) {
+      setEntryPrice(0); // Reset to 0 if the field is empty
+    }
+  };
 
   const calculatePositionMetrics = () => {
     try {
@@ -86,6 +93,8 @@ function App() {
     }
   };
 
+  
+
   return (
     <div className="min-h-screen bg-gray-900 text-white">
       <div className="container mx-auto px-4 py-8">
@@ -134,8 +143,9 @@ function App() {
                   type="number"
                   value={entryPrice}
                   onChange={(e) => setEntryPrice(parseFloat(e.target.value) || 0)}
+                  onBlur={handleBlur}
                   className="w-full bg-gray-700 rounded px-3 py-2 text-white"
-                />
+                />  
               </div>
 
               <div>
