@@ -23,11 +23,6 @@ function App() {
     calculatePositionMetrics();
   }, [entryPrice, stopLossPrice, targetPrice, leverage, marginAmount, isLong]);
 
-  const handleBlur = () => {
-    if (entryPrice) {
-      setEntryPrice(0); // Reset to 0 if the field is empty
-    }
-  };
 
   const calculatePositionMetrics = () => {
     try {
@@ -143,7 +138,6 @@ function App() {
                   type="number"
                   value={entryPrice}
                   onChange={(e) => setEntryPrice(parseFloat(e.target.value) || 0)}
-                  onBlur={handleBlur}
                   className="w-full bg-gray-700 rounded px-3 py-2 text-white"
                 />  
               </div>
