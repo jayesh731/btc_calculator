@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Calculator, Bitcoin, TrendingUp, TrendingDown, AlertTriangle, DollarSign, PercentIcon } from 'lucide-react';
 
 function App() {
-  const [entryPrice, setEntryPrice] = useState<number>(40000);
+  const [entryPrice, setEntryPrice] = useState<number>(0);
   const [stopLossPrice, setStopLossPrice] = useState<number>(39000);
   const [targetPrice, setTargetPrice] = useState<number>(42000);
   const [leverage, setLeverage] = useState<number>(10);
